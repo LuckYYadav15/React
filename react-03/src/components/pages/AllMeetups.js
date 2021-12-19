@@ -1,6 +1,6 @@
 // import { response } from "express";
 // import res from "express/lib/response";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import MeetupList from "../meetups/MeetupList";
 
 // const DUMMY_DATA = [
@@ -24,14 +24,19 @@ function AllMeetupsPage() {
     const [isLoading, setIsLoading] = useState(true);
     const [loadedMeetups, setLoadedMeetups] = useState([]);
 
-    fetch('https://react-getting-started-7d7a3-default-rtdb.firebaseio.com/meetups.json')
-        .then((response) => {
-            return response.json();
-        })
-        .then((data) => {
-            setIsLoading(false);
-            setLoadedMeetups(data);
-        });
+    useEffect(() => {
+        setIsLoading(true);
+        fetch('https://react-getting-started-7d7a3-default-rtdb.firebaseio.com/meetups.json')
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                setIsLoading(false);
+                setLoadedMeetups(data);
+            });
+    }, []);//empty array beacuse we din't used any dependeny in useEffect function
+
+
     if (isLoading) {
         return (
             <section>
