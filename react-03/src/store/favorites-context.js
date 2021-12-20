@@ -1,4 +1,13 @@
-import { createContext  } from "react";
+import { createContext } from "react";
 
 
-createContext();
+const FavouritesContext = createContext({
+    favorites: [],
+    totalfavorites: 0
+});
+
+function favoritesContextProvider(props) {
+    return <FavouritesContext.Provider>
+        {props.children}
+    </FavouritesContext.Provider>
+}
