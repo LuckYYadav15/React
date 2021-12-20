@@ -19,9 +19,11 @@ function favoritesContextProvider(props) {
         setUserFavorites(prevUserFavorites => {
             return prevUserFavorites.filter(meetup => meetup.id != meetupId);
         });
-     }
+    }
 
-    function itemIsFavoriteHandler() { }
+    function itemIsFavoriteHandler(meetupId) {
+        return userFavorites.some(meetup => meetup.id == meetupId);
+    }
 
     const context = {
         favorites: userFavorites,
