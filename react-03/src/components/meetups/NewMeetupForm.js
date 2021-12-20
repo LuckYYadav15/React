@@ -10,7 +10,7 @@ function NewMeetupForm(props) {
 
     function submitHandler(event) {
         event.preventDefault();
-        const enteredTitle = titleInputRef.current.value; 
+        const enteredTitle = titleInputRef.current.value;
         const enteredImage = imageInputRef.current.value;
         const enteredAddress = addressInputRef.current.value;
         const enteredDescription = descriptionInputRef.current.value;
@@ -47,7 +47,7 @@ function NewMeetupForm(props) {
                 </div>
             </form>
         </Card>
-        ); 
+    );
 }
 
 

@@ -18,9 +18,9 @@ function MainNavigation() {
                 </li>
                 <li>
                     <Link to='/favorites'>My Favorites
-                    <span className={classes.badge}>
-                        {favoritesCtx.totalfavorites}
-                    </span>
+                        <span className={classes.badge}>
+                            {favoritesCtx.totalFavorites}
+                        </span>
                     </Link>
                 </li>
             </ul>
