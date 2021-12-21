@@ -14,8 +14,7 @@ function AllMeetupsPage() {
             .then((data) => {
                 const meetups = [];
 
-                for(const key in data)
-                {
+                for (const key in data) {
                     const meetup = {
                         id: key,
                         ...data[key]//spread operator
