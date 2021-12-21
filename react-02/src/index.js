@@ -1,6 +1,3 @@
-// starting point of our project
-// HTMl in js is known as jSX
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 
